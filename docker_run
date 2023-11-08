@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+docker run \
+    --name z2m-kitchen \
+    --restart=unless-stopped \
+    --ip 192.168.0.18 \
+	--dns 192.168.0.13 \
+    --network slacknet-0 \
+    --device="$(readlink -f dev)":/dev/ttyACM0 \
+    -v ./data:/app/data \
+    -v /run/udev:/run/udev:ro \
+    -e TZ=America/Chicago \
+    -d \
+    koenkk/zigbee2mqtt

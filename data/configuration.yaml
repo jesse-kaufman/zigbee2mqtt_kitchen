@@ -1,0 +1,1026 @@
+homeassistant:
+  legacy_triggers: false
+socat:
+  enabled: false
+  master: pty,raw,echo=0,link=/tmp/ttyZ2M,mode=777
+  slave: tcp-listen:8485,keepalive,nodelay,reuseaddr,keepidle=1,keepintvl=1,keepcnt=5
+  options: '-d -d'
+  log: false
+mqtt:
+  server: mqtt://mqtt.home
+  password: '!secret.yaml password'
+  user: mqtt-user
+  base_topic: zigbee2mqtt
+  zigbee_herdsman_debug: true
+  keepalive: 60
+  reject_unauthorized: true
+  version: 5
+  include_device_information: false
+serial:
+  port: /dev/ttyACM0
+  rtscts: false
+  adapter: auto
+frontend:
+  port: 80
+advanced:
+  pan_id: 421
+  channel: 20
+  network_key:
+    - 4
+    - 2
+    - 0
+    - 7
+    - 10
+    - 4
+    - 2
+    - 0
+    - 7
+    - 1
+    - 0
+    - 4
+    - 20
+    - 7
+    - 1
+    - 10
+  homeassistant_legacy_entity_attributes: false
+  legacy_api: false
+  legacy_availability_payload: false
+  log_syslog:
+    app_name: Zigbee2MQTT-kitchen
+    eol: /n
+    host: localhost
+    localhost: localhost
+    path: /dev/log
+    pid: process.pid
+    port: 51
+    protocol: udp4
+    type: '5424'
+  last_seen: ISO_8601_local
+  output: json
+  log_level: info
+  transmit_power: 9
+  adapter_delay: 0
+  adapter_concurrent: 16
+  log_symlink_current: true
+device_options:
+  qos: 2
+  legacy: false
+  homeassistant:
+    last_seen:
+      enabled_by_default: true
+    battery_low:
+      enabled_by_default: true
+    linkquality:
+      enabled_by_default: true
+ota:
+  ikea_ota_use_test_url: false
+  update_check_interval: 1440
+availability: true
+devices:
+  '0x282c02bfffe823ec':
+    friendly_name: Bathroom-Motion-Sensor-Ceiling
+    homeassistant:
+      current:
+        enabled_by_default: true
+      last_seen:
+        enabled_by_default: false
+      linkquality:
+        enabled_by_default: true
+      name: Bathroom Motion Sensor (Ceiling)
+    legacy: false
+    optimistic: true
+    qos: 2
+    retain: true
+    retention: 60
+  '0xb0ce18140018247d':
+    friendly_name: Kitchen-Sink-Light
+    color_sync: true
+    state_action: false
+    transition: 1
+    homeassistant:
+      current:
+        enabled_by_default: true
+      last_seen:
+        enabled_by_default: false
+      linkquality:
+        enabled_by_default: true
+      name: Kitchen Sink Light
+      battery_low:
+        enabled_by_default: false
+    legacy: false
+    optimistic: true
+    qos: 2
+    retain: true
+    retention: 300
+  '0x282c02bfffe82ecf':
+    friendly_name: Kitchen-Motion-Sensor-Bathroom-Entrance
+    homeassistant:
+      current:
+        enabled_by_default: true
+      last_seen:
+        enabled_by_default: false
+      linkquality:
+        enabled_by_default: true
+      name: Kitchen Motion Sensor (Bathroom Entrance)
+      battery_low:
+        enabled_by_default: false
+    legacy: false
+    optimistic: true
+    qos: 2
+    retain: true
+    retention: 300
+  '0x00158d00094c5f62':
+    friendly_name: Bathroom-Multi-Sensor
+    homeassistant:
+      current:
+        enabled_by_default: true
+      last_seen:
+        enabled_by_default: false
+      linkquality:
+        enabled_by_default: true
+      name: Bathroom Multi-Sensor
+    legacy: false
+    optimistic: true
+    qos: 2
+    retain: true
+    retention: 300
+  '0x282c02bfffeb2a6c':
+    friendly_name: Washing-Machine-Outlet
+    state_action: false
+    homeassistant:
+      current:
+        enabled_by_default: true
+      last_seen:
+        enabled_by_default: false
+      linkquality:
+        enabled_by_default: true
+      name: Washing Machine Outlet
+      battery_low:
+        enabled_by_default: true
+    legacy: false
+    optimistic: true
+    qos: 2
+    retain: true
+    retention: 30
+  '0x282c02bfffe827bb':
+    friendly_name: Utility-Room-Motion-Sensor-East
+    homeassistant:
+      current:
+        enabled_by_default: true
+      last_seen:
+        enabled_by_default: false
+      linkquality:
+        enabled_by_default: true
+      name: Utility Room Motion Sensor (East)
+      battery_low:
+        enabled_by_default: false
+    legacy: false
+    optimistic: true
+    qos: 2
+    retain: true
+    retention: 300
+  '0xe0798dfffec10e8d':
+    friendly_name: Dishwasher-Button
+    homeassistant:
+      name: Dishwasher Button
+      current:
+        enabled_by_default: true
+      last_seen:
+        enabled_by_default: false
+      linkquality:
+        enabled_by_default: true
+    qos: 2
+    legacy: false
+    optimistic: true
+  '0x282c02bfffeb476b':
+    friendly_name: Microwave-Outlet
+    state_action: false
+    homeassistant:
+      current:
+        enabled_by_default: true
+      last_seen:
+        enabled_by_default: false
+      linkquality:
+        enabled_by_default: true
+      name: Microwave Outlet
+    legacy: false
+    optimistic: true
+    qos: 2
+    retain: true
+    retention: 300
+  '0x282c02bfffeb2f4d':
+    friendly_name: Dishwasher-Outlet
+    homeassistant:
+      current:
+        enabled_by_default: true
+      last_seen:
+        enabled_by_default: false
+      linkquality:
+        enabled_by_default: true
+      name: Dishwasher Outlet
+    legacy: false
+    optimistic: true
+    qos: 2
+    retain: true
+    retention: 300
+    state_action: false
+  '0x00158d0007ede1ad':
+    friendly_name: Dryer-Multi-Sensor
+    homeassistant:
+      current:
+        enabled_by_default: true
+      last_seen:
+        enabled_by_default: false
+      linkquality:
+        enabled_by_default: true
+      name: Dryer Multi-Sensor
+    legacy: false
+    optimistic: true
+    qos: 2
+    disabled: false
+    retain: true
+    retention: 300
+  '0xa4c1382b5ec16de9':
+    friendly_name: Kitchen-Cabinet-Lighting
+    color_sync: true
+    transition: 2
+    homeassistant:
+      last_seen:
+        enabled_by_default: false
+      linkquality:
+        enabled_by_default: true
+      name: Kitchen Cabinet Lighting
+      current:
+        enabled_by_default: true
+    legacy: false
+    optimistic: true
+    qos: 2
+    retain: true
+    retention: 300
+    state_action: false
+  '0xb0ce18140016e16e':
+    friendly_name: Bathroom-Mirror-Bulb-1
+    homeassistant:
+      last_seen:
+        enabled_by_default: false
+      linkquality:
+        enabled_by_default: true
+      name: Bathroom Mirror Bulb 1
+      battery_low:
+        enabled_by_default: false
+    legacy: false
+    optimistic: true
+    color_sync: true
+    state_action: false
+    transition: 1
+    qos: 2
+    retain: true
+    retention: 300
+  '0xb0ce18140016db8e':
+    friendly_name: Bathroom-Mirror-Bulb-3
+    homeassistant:
+      last_seen:
+        enabled_by_default: false
+      linkquality:
+        enabled_by_default: true
+      name: Bathroom Mirror Bulb 3
+      battery_low:
+        enabled_by_default: false
+    legacy: false
+    optimistic: true
+    transition: 1
+    color_sync: true
+    state_action: false
+    qos: 2
+    retain: true
+    retention: 300
+  '0xb0ce1814001793c6':
+    friendly_name: Bathroom-Overhead-Light
+    homeassistant:
+      last_seen:
+        enabled_by_default: false
+      linkquality:
+        enabled_by_default: true
+      name: Bathroom Overhead Light
+      current:
+        enabled_by_default: true
+      battery_low:
+        enabled_by_default: false
+    legacy: false
+    optimistic: true
+    transition: 1
+    color_sync: true
+    state_action: false
+    qos: 2
+    retain: true
+    retention: 30
+  '0x282c02bfffe842e5':
+    friendly_name: Utility-Room-Motion-Sensor-West
+    homeassistant:
+      last_seen:
+        enabled_by_default: false
+      linkquality:
+        enabled_by_default: true
+      name: Utility Room Motion Sensor (West)
+      current:
+        enabled_by_default: true
+      battery_low:
+        enabled_by_default: false
+    legacy: false
+    optimistic: true
+    qos: 2
+    retain: true
+    retention: 300
+  '0x282c02bfffeb6fe7':
+    friendly_name: Camera-Battery-Charger-1
+    homeassistant:
+      last_seen:
+        enabled_by_default: false
+      linkquality:
+        enabled_by_default: true
+      name: Camera Battery Charger 1
+      current:
+        enabled_by_default: true
+    legacy: false
+    optimistic: true
+    qos: 2
+    state_action: false
+    retain: true
+    retention: 300
+  '0xb0ce18140017b7af':
+    friendly_name: Kitchen-Main-Light-Bulb-2
+    homeassistant:
+      last_seen:
+        enabled_by_default: false
+      linkquality:
+        enabled_by_default: true
+      name: Kitchen Main Light Bulb 2
+      current:
+        enabled_by_default: true
+      battery_low:
+        enabled_by_default: false
+    legacy: false
+    optimistic: true
+    qos: 2
+    color_sync: true
+    state_action: false
+    transition: 1
+    retain: true
+    retention: 300
+  '0x282c02bfffe850ff':
+    friendly_name: Bathroom-Motion-Sensor-Kitchen-Entrance
+    homeassistant:
+      last_seen:
+        enabled_by_default: false
+      linkquality:
+        enabled_by_default: true
+      name: Bathroom Motion Sensor (Kitchen Entrance)
+      current:
+        enabled_by_default: true
+      battery_low:
+        enabled_by_default: false
+    legacy: false
+    optimistic: true
+    qos: 2
+    retain: true
+    retention: 300
+  '0x00158d0009413d96':
+    friendly_name: Utility-Room-Multi-Sensor
+    homeassistant:
+      last_seen:
+        enabled_by_default: false
+      linkquality:
+        enabled_by_default: true
+      name: Utility Room Multi-sensor
+      current:
+        enabled_by_default: true
+    legacy: false
+    optimistic: true
+    qos: 2
+    disabled: false
+    retain: true
+    retention: 300
+  '0x282c02bfffeb8096':
+    friendly_name: Camera-Battery-Charger-2
+    state_action: false
+    homeassistant:
+      last_seen:
+        enabled_by_default: false
+      linkquality:
+        enabled_by_default: true
+      name: Camera Battery Charger 2
+      current:
+        enabled_by_default: true
+    legacy: false
+    optimistic: true
+    qos: 2
+    retain: true
+    retention: 300
+  '0x282c02bfffeb6fe8':
+    friendly_name: Kettle-Outlet
+    homeassistant:
+      last_seen:
+        enabled_by_default: false
+      linkquality:
+        enabled_by_default: true
+      name: Kettle Outlet
+      current:
+        enabled_by_default: true
+    legacy: false
+    optimistic: true
+    qos: 2
+    state_action: false
+    retain: true
+    retention: 300
+  '0xb0ce18140017f03d':
+    friendly_name: Kitchen-Main-Light-Bulb-1
+    color_sync: true
+    state_action: false
+    homeassistant:
+      last_seen:
+        enabled_by_default: false
+      linkquality:
+        enabled_by_default: true
+      name: Kitchen Main Light Bulb 1
+      battery_low:
+        enabled_by_default: false
+      current:
+        enabled_by_default: true
+    legacy: false
+    optimistic: true
+    qos: 2
+    transition: 1
+    retain: true
+    retention: 300
+  '0xa4c1388b5f55d3d9':
+    friendly_name: Kitchen-Presence-Sensor
+    homeassistant:
+      current:
+        enabled_by_default: true
+      last_seen:
+        enabled_by_default: false
+      linkquality:
+        enabled_by_default: true
+      name: Kitchen Presence Sensor
+    legacy: false
+    optimistic: true
+    qos: 2
+    retain: true
+    retention: 300
+  '0xa4c138bc97d6ace1':
+    friendly_name: Bathroom-Presence-Sensor
+    homeassistant:
+      last_seen:
+        enabled_by_default: false
+      linkquality:
+        enabled_by_default: true
+      name: Bathroom Presence Sensor
+      current:
+        enabled_by_default: true
+      battery_low:
+        enabled_by_default: false
+    legacy: false
+    optimistic: true
+    qos: 2
+    disabled: false
+    retain: false
+    retention: 0
+    debounce: 0
+  '0x00158d00090eb95d':
+    friendly_name: Kitchen-Multi-Sensor
+    homeassistant:
+      current:
+        enabled_by_default: true
+      last_seen:
+        enabled_by_default: false
+      linkquality:
+        enabled_by_default: true
+      name: Kitchen Multi-sensor
+      battery_low:
+        enabled_by_default: false
+    legacy: false
+    optimistic: true
+    qos: 2
+    retain: true
+    retention: 300
+  '0x282c02bfffeb6a6a':
+    friendly_name: Freezer-Outlet
+    state_action: false
+    homeassistant:
+      battery_low:
+        enabled_by_default: false
+      current:
+        enabled_by_default: true
+      last_seen:
+        enabled_by_default: false
+      linkquality:
+        enabled_by_default: true
+      name: Freezer Outlet
+    legacy: false
+    optimistic: true
+    qos: 2
+    retain: true
+    retention: 60
+  '0x00158d00094d38bd':
+    friendly_name: Kettle-Contact-Sensor
+    homeassistant:
+      battery_low:
+        enabled_by_default: false
+      current:
+        enabled_by_default: true
+      last_seen:
+        enabled_by_default: false
+      linkquality:
+        enabled_by_default: true
+      name: Kettle Contact Sensor
+    legacy: false
+    optimistic: true
+    qos: 2
+  '0xb0ce18140017fa2f':
+    friendly_name: Kitchen-Stove-Light
+    homeassistant:
+      battery_low:
+        enabled_by_default: false
+      current:
+        enabled_by_default: true
+      last_seen:
+        enabled_by_default: false
+      linkquality:
+        enabled_by_default: true
+      name: Kitchen Stove Light
+    legacy: false
+    optimistic: true
+    qos: 2
+    retain: true
+    retention: 30
+    transition: 1
+    color_sync: true
+    state_action: false
+  '0x00158d0008f33f85':
+    friendly_name: Dryer-Vibration-Sensor
+    vibration_timeout: 60
+    device_temperature_calibration: 0
+    homeassistant:
+      battery_low:
+        enabled_by_default: false
+      current:
+        enabled_by_default: true
+      last_seen:
+        enabled_by_default: false
+      linkquality:
+        enabled_by_default: true
+      name: Dryer Vibration Sensor
+    legacy: false
+    optimistic: true
+    qos: 2
+    retain: true
+    retention: 300
+  '0x00158d00093e216e':
+    friendly_name: Microwave-Door-Contact-Sensor
+    homeassistant:
+      battery_low:
+        enabled_by_default: false
+      current:
+        enabled_by_default: true
+      last_seen:
+        enabled_by_default: false
+      linkquality:
+        enabled_by_default: true
+      name: Microwave Door Contact Sensor
+    legacy: false
+    optimistic: true
+    qos: 2
+  '0xb0ce18140017fc3c':
+    friendly_name: Pantry-Light
+    homeassistant:
+      battery_low:
+        enabled_by_default: false
+      current:
+        enabled_by_default: true
+      last_seen:
+        enabled_by_default: false
+      linkquality:
+        enabled_by_default: true
+      name: Pantry Light
+    legacy: false
+    optimistic: true
+    qos: 2
+    color_sync: true
+    state_action: false
+    transition: 1
+    retain: true
+    retention: 30
+  '0x282c02bfffed02db':
+    friendly_name: Kitchen-Motion-Sensor-Utility-Room-Entrance
+    homeassistant:
+      battery_low:
+        enabled_by_default: false
+      current:
+        enabled_by_default: true
+      last_seen:
+        enabled_by_default: false
+      linkquality:
+        enabled_by_default: true
+      name: Kitchen Motion Sensor (Utility Room Entrance)
+    legacy: false
+    optimistic: true
+    qos: 2
+    retain: true
+    retention: 300
+  '0x00158d0009f4a110':
+    friendly_name: Kitchen-Button
+    legacy: false
+    homeassistant:
+      battery_low:
+        enabled_by_default: false
+      last_seen:
+        enabled_by_default: false
+      linkquality:
+        enabled_by_default: true
+      name: Kitchen Button
+    optimistic: true
+    qos: 2
+  '0x000d6f001103febe':
+    friendly_name: Dishwasher-Door-Contact-Sensor
+    homeassistant:
+      battery_low:
+        enabled_by_default: false
+      current:
+        enabled_by_default: true
+      last_seen:
+        enabled_by_default: false
+      linkquality:
+        enabled_by_default: true
+      name: Dishwasher Door Contact Sensor
+    legacy: false
+    optimistic: true
+    qos: 2
+    retain: true
+    retention: 300
+  '0x00124b002a2e8ce4':
+    friendly_name: Utility-Room-Router
+    homeassistant:
+      battery_low:
+        enabled_by_default: false
+      current:
+        enabled_by_default: true
+      last_seen:
+        enabled_by_default: false
+      linkquality:
+        enabled_by_default: true
+      name: Utility Room Router
+    legacy: false
+    optimistic: true
+    qos: 2
+  '0x282c02bfffe84a9b':
+    friendly_name: Kitchen-Motion-Sensor-South
+    homeassistant:
+      battery_low:
+        enabled_by_default: false
+      last_seen:
+        enabled_by_default: false
+      linkquality:
+        enabled_by_default: true
+      name: Kitchen Motion Sensor (South)
+    legacy: false
+    optimistic: true
+    qos: 2
+    retain: true
+    retention: 300
+  '0x00158d00091b4ce1':
+    friendly_name: Dishwasher-Faucet
+    homeassistant:
+      battery_low:
+        enabled_by_default: false
+      last_seen:
+        enabled_by_default: false
+      linkquality:
+        enabled_by_default: true
+      name: Dishwasher Faucet
+    legacy: false
+    optimistic: true
+    qos: 2
+    retain: true
+    retention: 300
+    device_temperature_calibration: 0
+  '0x282c02bfffeb388b':
+    friendly_name: Washing-Machine-Pipe-Warmer
+    homeassistant:
+      battery_low:
+        enabled_by_default: false
+      last_seen:
+        enabled_by_default: false
+      linkquality:
+        enabled_by_default: true
+      name: Washing Machine Pipe Warmer
+    legacy: false
+    optimistic: true
+    qos: 2
+    retain: true
+    retention: 60
+    state_action: false
+  '0x00158d0007edbe73':
+    friendly_name: Back-Door-Motion-Sensor
+    homeassistant:
+      battery_low:
+        enabled_by_default: false
+      last_seen:
+        enabled_by_default: false
+      linkquality:
+        enabled_by_default: true
+      name: Back Door Motion Sensor
+    legacy: false
+    optimistic: true
+    qos: 2
+    retain: true
+    retention: 300
+  '0x000d6f0011000ff5':
+    friendly_name: Pantry-Door
+    homeassistant:
+      battery_low:
+        enabled_by_default: false
+      last_seen:
+        enabled_by_default: false
+      linkquality:
+        enabled_by_default: true
+      name: Pantry Door
+    legacy: false
+    optimistic: true
+    qos: 2
+    retain: true
+    retention: 300
+  '0xb0ce18140016d5ed':
+    friendly_name: Bathroom-Mirror-Bulb-2
+    homeassistant:
+      battery_low:
+        enabled_by_default: false
+      last_seen:
+        enabled_by_default: false
+      linkquality:
+        enabled_by_default: true
+      name: Bathroom Mirror Bulb 2
+    legacy: false
+    optimistic: true
+    qos: 2
+    retain: true
+    retention: 300
+    color_sync: true
+    state_action: false
+    transition: 1
+  '0x00158d00096878f9':
+    friendly_name: Washing-Machine-Door-Contact-Sensor
+    homeassistant:
+      battery_low:
+        enabled_by_default: true
+      last_seen:
+        enabled_by_default: true
+      linkquality:
+        enabled_by_default: true
+      name: Washing Machine Door Contact Sensor
+    legacy: false
+    optimistic: true
+    qos: 2
+    retain: true
+    retention: 300
+  '0xb0ce181400039ced':
+    friendly_name: Utility-Room-Bulb-4
+    homeassistant:
+      battery_low:
+        enabled_by_default: true
+      last_seen:
+        enabled_by_default: true
+      linkquality:
+        enabled_by_default: true
+      name: Utility Room Bulb 4
+    legacy: false
+    optimistic: true
+    qos: 2
+    retain: true
+    retention: 60
+    transition: 1
+    color_sync: true
+    state_action: false
+  '0xb0ce18140006f000':
+    friendly_name: Utility-Room-Bulb-3
+    homeassistant:
+      battery_low:
+        enabled_by_default: true
+      last_seen:
+        enabled_by_default: true
+      linkquality:
+        enabled_by_default: true
+      name: Utility Room Bulb 3
+    legacy: false
+    optimistic: true
+    qos: 2
+    retain: true
+    retention: 60
+    transition: 1
+    color_sync: true
+    state_action: false
+  '0xb0ce18140004f3c3':
+    friendly_name: Utility-Room-Bulb-2
+    homeassistant:
+      battery_low:
+        enabled_by_default: true
+      last_seen:
+        enabled_by_default: true
+      linkquality:
+        enabled_by_default: true
+      name: Utility Room Bulb 2
+    legacy: false
+    optimistic: true
+    qos: 2
+    retain: true
+    retention: 59
+    transition: 1
+    color_sync: true
+    state_action: false
+  '0x000d6f00110110cc':
+    friendly_name: Dryer-Door-Contact-Sensor
+    homeassistant:
+      battery_low:
+        enabled_by_default: true
+      last_seen:
+        enabled_by_default: true
+      linkquality:
+        enabled_by_default: true
+      name: Dryer Door Contact Sensor
+    legacy: false
+    optimistic: true
+    qos: 2
+    retain: true
+    retention: 60
+  '0xb0ce18140352e561':
+    friendly_name: Bathroom-Recessed-Light
+    homeassistant:
+      battery_low:
+        enabled_by_default: true
+      last_seen:
+        enabled_by_default: true
+      linkquality:
+        enabled_by_default: true
+      name: Bathroom Recessed Light
+    legacy: false
+    optimistic: true
+    qos: 2
+    retain: true
+    retention: 30
+    transition: 1
+    color_sync: true
+    state_action: false
+  '0x00158d00096878bc':
+    friendly_name: Basement-Door
+    homeassistant:
+      battery_low:
+        enabled_by_default: true
+      last_seen:
+        enabled_by_default: true
+      linkquality:
+        enabled_by_default: true
+      name: Basement Door
+    legacy: false
+    optimistic: true
+    qos: 2
+  '0xb0ce181400024933':
+    friendly_name: Utility-Room-Bulb-1
+    homeassistant:
+      battery_low:
+        enabled_by_default: true
+      last_seen:
+        enabled_by_default: true
+      linkquality:
+        enabled_by_default: true
+      name: Utility Room Bulb 1
+    legacy: false
+    optimistic: true
+    qos: 2
+    retain: true
+    retention: 30
+    transition: 1
+    color_sync: true
+    state_action: false
+  '0x000d6f0010b4e96e':
+    friendly_name: Bathroom-Door
+    homeassistant:
+      battery_low:
+        enabled_by_default: true
+      last_seen:
+        enabled_by_default: true
+      linkquality:
+        enabled_by_default: true
+      name: Bathroom Door
+    legacy: false
+    optimistic: true
+    qos: 2
+    retain: true
+    retention: 30
+  '0x000d6f0011195cb0':
+    friendly_name: Kitchen-Silverware-Drawer-Contact-Sensor
+    homeassistant:
+      battery_low:
+        enabled_by_default: true
+      last_seen:
+        enabled_by_default: true
+      linkquality:
+        enabled_by_default: true
+      name: Kitchen Silverware Drawer Contact Sensor
+    legacy: false
+    optimistic: true
+    qos: 2
+    retain: true
+    retention: 30
+  '0x00124b002a2f15dc':
+    friendly_name: Kitchen-Ceiling-Router
+    homeassistant:
+      battery_low:
+        enabled_by_default: true
+      last_seen:
+        enabled_by_default: true
+      linkquality:
+        enabled_by_default: true
+      name: Kitchen Ceiling Router
+    legacy: false
+    optimistic: true
+    qos: 2
+    retain: false
+  '0x282c02bfffeb2ddf':
+    friendly_name: Bathroom-Fan
+    homeassistant:
+      switch:
+        type: fan
+        object_id: fan
+      fan:
+        state_value_template: '{{ value_json.state }}'
+      battery_low:
+        enabled_by_default: true
+      last_seen:
+        enabled_by_default: true
+      linkquality:
+        enabled_by_default: true
+      name: Bathroom Fan
+    legacy: false
+    optimistic: true
+    qos: 2
+groups:
+  '1':
+    friendly_name: Kitchen-Main-Light
+    legacy: false
+    optimistic: true
+    qos: 2
+    retain: true
+    retention: 300
+    homeassistant:
+      name: Kitchen Main Light
+      suggested_area: Kitchen
+    transition: 1
+    devices:
+      - 0xb0ce18140017f03d/1
+      - 0xb0ce18140017b7af/1
+  '2':
+    friendly_name: Bathroom-Lights
+    devices:
+      - 0xb0ce18140016e16e/1
+      - 0xb0ce18140016d5ed/1
+      - 0xb0ce18140016db8e/1
+      - 0xb0ce1814001793c6/1
+      - 0xb0ce18140352e561/1
+    legacy: false
+    optimistic: true
+    qos: 2
+    retain: true
+    retention: 300
+    transition: 1
+    homeassistant:
+      name: Bathroom Lights
+  '3':
+    friendly_name: Utility-Room-Lights
+    legacy: false
+    optimistic: true
+    qos: 2
+    retain: true
+    retention: 300
+    transition: 1
+    homeassistant:
+      name: Utility Room Lights
+    devices:
+      - 0xb0ce181400024933/1
+      - 0xb0ce18140004f3c3/1
+      - 0xb0ce18140006f000/1
+      - 0xb0ce181400039ced/1
+  '7':
+    friendly_name: Bathroom-Mirror-Light
+    legacy: false
+    optimistic: true
+    qos: 2
+    retain: true
+    retention: 300
+    transition: 1
+    homeassistant:
+      name: Bathroom Mirror Light
+    devices:
+      - 0xb0ce18140016e16e/1
+      - 0xb0ce18140016d5ed/1
+      - 0xb0ce18140016db8e/1
+external_converters: []
+blocklist: []
